@@ -3,16 +3,30 @@ const app = express()
 const port = 3000;
 const fs = require("fs");
 
+app.use(express.json());
+
 app.use('/', express.static('public'))
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
 });
 
+app.post('/', (req, res) => {
+    
+    res.send("this is post!")
+});
+
 app.get('/tickets', (req, res) => {
     fs.writeFileSync("tickets.txt", "form tickets");
     res.send('you called tickets! and i have sent the same');
-})
+});
+
+app.post('/tickets', (req, res) => {
+    console.log("req : ", req.body);
+    fs.writeFileSync("tickets.json", JSON.stringify(req.body));
+
+    res.json(req.body);
+});
 
 app.get('/customers', (req, res) => {
     res.send('you called customers')

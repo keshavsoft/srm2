@@ -21,6 +21,11 @@
             Pull Data from server
         </button>
 
+        <button type="button" class="btn btn-primary" id="PushButtonId">
+            Push Data to server
+        </button>
+
+
     </main>
     <footer>
         <!-- place footer here -->
@@ -44,6 +49,20 @@
                 .then(data => console.log(data))
                 .catch(err => console.error(err));
         });
+
+        let jVarLocalPushButtonId = document.getElementById("PushButtonId");
+        jVarLocalPushButtonId.addEventListener("click", () => {
+            fetch('/tickets', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    'foo': 'bar'
+                }),
+            }).then(response => response.text())
+                .then(data => console.log(data))
+                .catch(err => console.error(err));
+        });
+
 
     </script>
 </body>
