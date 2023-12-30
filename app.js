@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-    
+
     res.send("this is post!")
 });
 
@@ -27,6 +27,18 @@ app.post('/tickets', (req, res) => {
 
     res.json(req.body);
 });
+
+app.put('/tickets', (req, res) => {
+    console.log("req : ", req.body);
+    let LocalOldData = fs.readFileSync("tickets.json");
+    let LocalOldJsonData = JSON.parse(LocalOldData);
+    LocalOldJsonData.push(req.body);
+
+    fs.writeFileSync("tickets.json", JSON.stringify(LocalOldJsonData));
+
+    res.json(req.body);
+});
+
 
 app.get('/customers', (req, res) => {
     res.send('you called customers')
