@@ -1,0 +1,7 @@
+PUT http://localhost:3000/tickets
+Content-Type: application/json
+
+{
+    "Name":"Haaniya",
+    "Mobile":888
+}

@@ -43,8 +43,9 @@
         let jVarLocalPullButtonId = document.getElementById("PullButtonId");
         jVarLocalPullButtonId.addEventListener("click", () => {
             console.log("sssssssssssssssss");
+            let jVarLocalUrl = "http://localhost:3000/tickets";
 
-            fetch('/tickets')
+            fetch(jVarLocalUrl)
                 .then(response => response.text())
                 .then(data => console.log(data))
                 .catch(err => console.error(err));

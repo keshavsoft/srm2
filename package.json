@@ -1,0 +1,22 @@
+{
+  "name": "srm2",
+  "version": "1.0.0",
+  "description": "train srm college for 2nd year students",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keshavsoft/srm2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keshavsoft/srm2/issues"
+  },
+  "homepage": "https://github.com/keshavsoft/srm2#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
